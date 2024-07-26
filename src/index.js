@@ -1,7 +1,9 @@
+// src/index.js
 import dotenv from "dotenv";
-import expressService from "./services/express.service";
-import sequelizeService from "./services/sequelize.service";
-import awsService from "./services/aws.service";
+import expressService from "./services/express.service.js";
+import sequelizeService from "./services/sequelize.service.js";
+import awsService from "./services/aws.service.js";
+
 dotenv.config();
 
 const services = [expressService, awsService, sequelizeService];
@@ -12,7 +14,7 @@ const services = [expressService, awsService, sequelizeService];
       await service.init();
     }
     console.log("Server initialized.");
-    //PUT ADITIONAL CODE HERE.
+    // PUT ADDITIONAL CODE HERE.
   } catch (error) {
     console.log(error);
     process.exit(1);
